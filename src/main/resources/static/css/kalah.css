@@ -1,0 +1,82 @@
+html {
+	background-color: #3e1301;
+	color: white;
+	padding: 2em;
+}
+
+html * {
+	font-family: 'Droid Serif', serif;
+}
+
+h1 {
+	font-size: 4em;
+}
+
+.btn-primary{
+	cursor:pointer;
+	padding:5px 25px;
+	background:#35b128;
+	border:1px solid #33842a;
+	border-radius: 10px;
+	box-shadow: 0 0 4px rgba(0,0,0, .75);
+	color:#f3f3f3;
+	font-size:1.1em;
+}
+.btn-primary:hover, .btn-primary:focus {
+	background-color :#399630;
+	box-shadow: 0 0 1px rgba(0,0,0, .75);
+}
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.status-bar {
+	color: #8c7676; 
+}
+
+table, th , td {
+  padding: 5px;
+  color: black;
+}
+table {
+	color: red;
+	border: 1px solid black;
+    border-radius: 1em;
+    background-image: url("wood.jpg");
+    background-repeat: repeat;
+	box-shadow: 6px 6px 12px rgba(0,0,0, .75);
+}
+tr {
+	padding: 10px;
+}
+td {
+	color: white;
+	font-size: 64px;
+	text-align: center;
+}
+td.player {
+	font-size: 32px;
+	color: #8c7676;
+	text-decoration: none;
+}
+td.players-turn {
+	color: #FFF;
+	text-decoration: underline;
+}
+td.KalahPit, td.RegularPit {
+	border: 1px solid black;
+    border-radius: 1em;
+	background:rgba(255,255,255,0.1);
+	min-width: 100px;
+	max-width: 100px;
+}
+td.KalahPit {
+	color: #8c7676;
+}
+.empty {
+	min-width: 100px;
+	max-width: 100px;
+	height: 100px;
+}

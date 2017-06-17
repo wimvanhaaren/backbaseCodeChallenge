@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="kalahApp">
+<head>
+	<title>Kalah</title>
+	<link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
+	<link rel="stylesheet" href="css/kalah.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script src="js/kalah.js"></script>
+</head>
+
+<body>
+<div ng-controller="GameController as game">
+	<h1>Kalah</h1>
+	<form ng-submit="game.start()">
+    	<input class="btn-primary" type="submit" value="Start a new game">
+	</form>
+    <hr>
+    
+    <div ng-show="game.currentPlayer" class="ng-hide status-bar">
+      	Game status: {{game.status}}
+      	<br>
+      	{{game.currentPlayer.name}}'s turn...
+    </div>
+    <hr>
+
+    <div id="board" ng-show="game.currentPlayer" class="ng-hide">
+		<table>
+			<tr>
+				<td colspan="8" class="player" ng-class="game.currentPlayer.name == game.players[1].name ? 'players-turn' : ''">Player 2</td>
+			</tr>		
+    		<tr class="board-row">
+       			<td class="KalahPit">{{game.board.pits[13].numberOfStones }}</td>
+				<td ng-click="game.move(12);" class="RegularPit">{{game.board.pits[12].numberOfStones }}</td>
+       			<td ng-click="game.move(11);" class="RegularPit">{{game.board.pits[11].numberOfStones }}</td>
+       			<td ng-click="game.move(10);" class="RegularPit">{{game.board.pits[10].numberOfStones }}</td>
+       			<td ng-click="game.move(9);" class="RegularPit">{{game.board.pits[9].numberOfStones }}</td>
+       			<td ng-click="game.move(8);" class="RegularPit">{{game.board.pits[8].numberOfStones }}</td>
+       			<td ng-click="game.move(7);" class="RegularPit">{{game.board.pits[7].numberOfStones }}</td>
+       			<td class="empty"></td>
+       	 	</tr>
+       	 
+    		<tr class="board-row">
+       			<td class="empty"></td>
+       			<td ng-click="game.move(0);" class="RegularPit">{{game.board.pits[0].numberOfStones }}</td>
+       			<td ng-click="game.move(1);" class="RegularPit">{{game.board.pits[1].numberOfStones }}</td>
+       			<td ng-click="game.move(2);" class="RegularPit">{{game.board.pits[2].numberOfStones }}</td>
+       			<td ng-click="game.move(3);" class="RegularPit">{{game.board.pits[3].numberOfStones }}</td>
+       			<td ng-click="game.move(4);" class="RegularPit">{{game.board.pits[4].numberOfStones }}</td>
+       			<td ng-click="game.move(5);" class="RegularPit">{{game.board.pits[5].numberOfStones }}</td>
+       			<td class="KalahPit">{{game.board.pits[6].numberOfStones }}</td>
+			</tr>
+       		<tr>
+       			<td colspan="8" class="player" ng-class="game.currentPlayer.name == game.players[0].name ? 'players-turn' : ''">Player 1</td>
+      		</tr>
+		</table>
+	</div>
+
+</div>
+</body>
+
+</html>
